@@ -1,14 +1,14 @@
 import Header from '../components/Header'
 import LandingPage from '../components/LandingPage'
-function index() {
+function Index() {
   return (
     <div>
 <Header />
-      <div style={{margin:'auto',maxWidth:'1500px',marginTop:'-50px'}}>
+      <div style={{margin:'auto',maxWidth:'1500px'}}>
 <LandingPage />
     </div>
     </div>
   )
 }
 
-export default index
+export default Index
