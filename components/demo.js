@@ -196,7 +196,7 @@ MozBoxShadow: '0px 0px 8px 2px rgba(0,0,0,0.09)',minWidth:'230px'}}>
                 </MuiPickersUtilsProvider>
             </div>
             <Button variant="outlined" color="primary" style={{border:'none',color:'white',fontWeight:'bold',backgroundColor:'#008bfc',position:'relative', top:width<1250?'10px':'0'}}>
-  Search
+  Search Hotels
 </Button>
         </div>
         </>

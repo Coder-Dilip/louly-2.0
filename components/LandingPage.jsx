@@ -4,17 +4,19 @@ import styles from "../styles/Home.module.css";
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import MaterialUIPickers from '../components/demo';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import PopularDestination from '../components/PopularDestination'
+import PopularDestination from '../components/PopularDestination';
+import Whyus from "./Whyus";
 
 
 function LandingPage() {
   const [width, setwidth] = useState(0);
-
   useEffect(() => {
     if (process.browser) {
       setwidth(window.innerWidth);
     }
   }, []);
+
+ 
 
   useEffect(() => {
     function handleResize() {
@@ -54,8 +56,12 @@ function LandingPage() {
         </div>
       </div>
     </div>
-    <div id='popularDestination' style={{ marginLeft: width > 542 ? '10%' : '6%',marginTop:width>542?'50px':'250px'}}>
+    
+    <div id='popularDestination' style={{marginTop:width>542?'50px':'250px',marginBottom:'50px'}}>
 <PopularDestination />
+</div>
+<div>
+  <Whyus />
 </div>
 </>
   );

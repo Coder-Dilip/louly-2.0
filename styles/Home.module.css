@@ -218,6 +218,36 @@ line-height: 3.6rem;
     }
   }
 
+  /* popular destination */
+  .left_whyus{
+    transition: .3s;
+      -webkit-animation: float 3s alternate infinite ease-in-out;
+      animation: float 3s alternate infinite ease-in-out;
+  }
+
+  .left_whyus>div>div{
+    border-radius: 15px;
+    margin: 20px;
+    height: 150px;
+    padding: 20px;
+  }
+
+
+  @keyframes float {
+    0% {
+      transform: translateY(10px) rotate3d(0, 0, 0, 
+    0deg
+    );
+    }
+    100% {
+      transform: translateY(-10px) rotate3d(0, 0, 0, 
+    0deg
+    );
+    }
+    }
+
+  
+
 
 
   
