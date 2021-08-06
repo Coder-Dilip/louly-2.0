@@ -159,7 +159,9 @@ export default function MaterialUIPickers() {
     return (
         <>
         {/* <p>Search Hotels</p> */}
-        <div style={{ marginLeft: width > 542 ? '10%' : '6%', marginTop: '50px', background: 'white', maxWidth: '70%', display: 'flex', flexWrap: 'wrap',padding:'20px',borderRadius:'10px',alignItems:'center' }}>
+        <div  style={{ marginLeft: width > 542 ? '10%' : '6%', marginTop: '10px', background: 'white', maxWidth: '70%', display: 'flex', flexWrap: 'wrap',padding:'20px',borderRadius:'10px',alignItems:'center', boxShadow: '0px 0px 8px 2px rgba(0,0,0,0.09)',
+WebkitBoxShadow: '0px 0px 8px 2px rgba(0,0,0,0.09)',
+MozBoxShadow: '0px 0px 8px 2px rgba(0,0,0,0.09)',minWidth:'230px'}}>
             <SimpleSelect />
             <div>
                 <MuiPickersUtilsProvider utils={DateFnsUtils}>

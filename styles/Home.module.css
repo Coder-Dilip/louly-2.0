@@ -124,6 +124,7 @@ line-height: 3.6rem;
    animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
      }
 
+
      @keyframes beginAnimate {
       0% {
         opacity: 0;
@@ -143,7 +144,7 @@ line-height: 3.6rem;
       max-width: 400px;
       margin-left: 6%;
       line-height: 2.3rem;
-      color:white;
+      color:black;
       -webkit-animation-duration: 2s;
    animation-duration: 2s;
    -webkit-animation-name: beginAnimate;
@@ -167,6 +168,54 @@ line-height: 3.6rem;
   .explore_btn:hover{
     margin-right: 9px;
     transition: .3s;
+  }
+
+
+  .animated_arrow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s;
+    width:20px;
+    margin: auto;
+    position: relative;
+    top:30px;
+    cursor:pointer
+  }
+  
+  
+  .firstChild{
+    color:#ffffff;
+    animation: fade 3s  infinite;
+  }
+  
+  
+  .secondChild,.thirdChild{
+    
+    animation: fade 3s  infinite;
+  }
+  .secondChild{
+    color:#ffffffd0
+  }
+  .thirdChild{
+    color:#ffffff60
+  }
+  
+  
+  
+  @keyframes fade{
+    0% {
+      opacity:0;
+      transform: translateY(-10px) rotate3d(0, 0, 0, 
+      0deg
+      );
+    }
+    100% {
+    opacity: 1;
+    transform: translateY(0) rotate3d(0, 0, 0, 
+    0deg
+    );
+    }
   }
 
 
