@@ -6,6 +6,7 @@ import MaterialUIPickers from '../components/demo';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import PopularDestination from '../components/PopularDestination';
 import Whyus from "./Whyus";
+import Services from "./Services";
 
 
 function LandingPage() {
@@ -56,13 +57,15 @@ function LandingPage() {
         </div>
       </div>
     </div>
-    
     <div id='popularDestination' style={{marginTop:width>542?'50px':'250px',marginBottom:'50px'}}>
 <PopularDestination />
 </div>
-<div>
+
   <Whyus />
-</div>
+
+  <Services />
+
+
 </>
   );
 }

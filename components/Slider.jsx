@@ -28,27 +28,27 @@ export default function Slider (props){
     <div style={{position:'relative',width:'80%'}}>
       <div style={{}}  ref={sliderRef} className="keen-slider" id={styles.popular_img_id}>
         <div className="keen-slider__slide">
-            <Image src='/pokhara.jpeg' width={400} height={300} />
+            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
         <div className="keen-slider__slide">
-            <Image src='/kathmandu.jpg' width={400} height={300} />
+            <Image className={styles.slider_img} priority={true} src='/kathmandu.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Kathmandu <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
         <div className="keen-slider__slide">
-            <Image src='/chitwan.jpg' width={400} height={300} />
+            <Image className={styles.slider_img} priority={true} src='/chitwan.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Chitwan <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
         <div className="keen-slider__slide">
-            <Image src='/lumbini.png' width={400} height={300} />
+            <Image className={styles.slider_img} priority={true} src='/lumbini.png' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Lumbini <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
         <div className="keen-slider__slide">
-            <Image src='/mustang.jpg' width={400} height={300} />
+            <Image className={styles.slider_img} priority={true} src='/mustang.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Mustang <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
         <div className="keen-slider__slide">
-            <Image src='/Rasuwa.jpg' width={400} height={300} />
+            <Image className={styles.slider_img} priority={true} src='/Rasuwa.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Rasuwa  <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
       </div>

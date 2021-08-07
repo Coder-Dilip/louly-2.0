@@ -1,5 +1,7 @@
 import Slider from "./Slider"
 import { useState,useEffect } from "react";
+import styles from '../styles/Home.module.css';
+
 const PopularDestination=()=> {
     const [width, setwidth] = useState(0);
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,7 +12,7 @@ const PopularDestination=()=> {
     }, []);
     return (
         <div> 
-            <p style={{fontWeight:'bolder',fontFamily:'sans-serif',fontSize:width>500?'2.5rem':'1.8rem',textAlign:'center',position:'relative',left:width<500?'-20px':'0'}}>Popular Destination</p>
+            <p className={styles.subTitle}>Popular Destination</p>
            <div style={{marginLeft: width > 542 ? '10%' : '6%',}}><Slider /></div>
         </div>
     )

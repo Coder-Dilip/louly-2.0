@@ -246,7 +246,113 @@ line-height: 3.6rem;
     }
     }
 
+    .slider_img{
+      transition: .3s !important;
+      cursor: pointer;
+    }
+
+    .slider_img:hover{
+      transition: .3s;
+      transform: scale(1.1);
+      filter: brightness(0.6);
+    }
+
+    .what_icon{
+      transition: .3s;
+      -webkit-animation: whatAnimation 2s alternate infinite ease-in-out;
+      animation: whatAnimation 2s alternate infinite ease-in-out;
+    }
+
+    @keyframes whatAnimation {
+      0% {
+        transform: translateY(5px)
+      }
+      100% {
+        transform: translateY(-5px) rotate(50deg)
+        scale(1.5)
+      }
+      }
+
+
+      .goLeft{
+        margin-left: 10%;
+      }
+
+      .subTitle{
+        font-size: 2.8rem;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* fontWeight:'bold',fontSize:width>500?'2.5rem':'1.8rem',textAlign:'center',position:'relative',left:width<500?'-20px':'0' */
+
+      @media only screen and (max-width: 542px){
+.goLeft{
+ margin-left: 6%; 
+}
+.subTitle{
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  left: -20px;
+}
+      }
+
+      
+
+      .services_container{
+        padding: 30px;
+       box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.04);
+       -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.04);
+       -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.04);
+       margin: 30px;
+       max-width: 300px;
+       cursor: pointer;
+       border: 2px solid rgba(0, 0, 0, 0);
+       border-radius: 15px;
+       transition: .3s;
+       ;
+      }
+      .services_container:hover{
+      transform: scale(1.1);
+        transition: .3s;
+      }
+
+      .services_icon{
+        padding: 10px;
+        border-radius: 15px;
+        font-size: 70px !important;
+      }
+
+      .services_title{
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
   
+      .services_subTitle{
+        width: 95%;
+        max-width: 300px;
+        font-size: 0.8rem;
+      }
+
+      .services_button{
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        border: 2px solid lightgray;
+        padding: 5px 20px;
+        background: white;
+        cursor: pointer;
+        margin-top: 12px;
+      }
+
+      .services_button:hover{
+        background:#008bfc;
+        color: white;
+        border-color: #008bfc;
+        transition: .3s;
+      }
 
 
 
