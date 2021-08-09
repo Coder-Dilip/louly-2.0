@@ -1,36 +1,50 @@
-import React,{useState,useEffect,useRef} from "react"
+import React,{useCallback,useState,useEffect,useRef} from "react"
 import { useKeenSlider } from "keen-slider/react"
-import styles from '../styles/Home.module.css'
 import "keen-slider/keen-slider.min.css"
-import Image from 'next/image'
-import RoomIcon from '@material-ui/icons/Room';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css'
+import { useResizeDetector } from 'react-resize-detector';
+
+// import "./styles.css"
 
 export default (props) => {
-  const [width, setwidth] = useState(0);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  useEffect(() => {
-    if (process.browser) {
-      setwidth(window.innerWidth);
-    }
-  }, []);
-
-  const [pause, setPause] = React.useState(false)
-  const timer = React.useRef()
-  const [sliderRef, slider] = useKeenSlider({
-    loop: true,
+  const [pause, setPause] = useState(false)
+  const timer = useRef()
+  let sliderRes;
+  const [sliderRef,slider] = useKeenSlider({
     slidesPerView:1,
-    spacing:20,
-    dragStart: () => {
+    loop:true,
+duration:1000,
+spacing:1,
+ dragStart: () => {
       setPause(true)
     },
     dragEnd: () => {
       setPause(false)
     },
+    created(s) {
+      sliderRes=s;
+    },
   })
 
-  React.useEffect(() => {
+useEffect(() => {
+    timer.current = setInterval(() => {
+      if (!pause && slider) {
+        slider.next()
+      }
+    }, 3000)
+    return () => {
+      clearInterval(timer.current)
+    }
+  }, [pause, slider])
+
+  const onResize = useCallback(() => {
+    if (sliderRes !== undefined && sliderRes !== null) {
+      sliderRes.resize();
+    }
+  }, []);
+
+ useEffect(() => {
     sliderRef.current.addEventListener("mouseover", () => {
       setPause(true)
     })
@@ -39,47 +53,25 @@ export default (props) => {
     })
   }, [sliderRef])
 
-  React.useEffect(() => {
-    timer.current = setInterval(() => {
-      if (slider) {
-        slider.next()
-      }
-    }, 2500)
-    return () => {
-      clearInterval(timer.current)
-    }
-  }, [pause, slider])
+  const { width, height, ref } = useResizeDetector({ onResize, handleWidth: true, handleHeight: false });
+
 
   return (
-    <>
-     <div style={{position:'relative',width:'80%',margin:'auto'}}>
-      <div  ref={sliderRef} className="keen-slider" id={styles.popular_img_id}>
-        <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={600} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
+    <div ref={ref} style={{width:'80%', marginTop:'120px'}}>
+    <div ref={sliderRef} className="keen-slider">
+     <div className="keen-slider__slide">
+            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={400} />
+            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara</p>
         </div>
-        <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/kathmandu.jpg' width={1200} height={600} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Kathmandu <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
+     <div className="keen-slider__slide">
+            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={400} />
+            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara</p>
         </div>
-        <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/chitwan.jpg' width={1200} height={600} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Chitwan <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
+     <div className="keen-slider__slide">
+            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={400} />
+            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara</p>
         </div>
-        <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/lumbini.png' width={1200} height={600} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Lumbini <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
-        </div>
-        <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/mustang.jpg' width={1200} height={600} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Mustang <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
-        </div>
-        <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/Rasuwa.jpg' width={1200} height={600} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Rasuwa  <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
-        </div>
-      </div>
-      </div>
-    </>
+    </div>
+    </div>
   )
 }
