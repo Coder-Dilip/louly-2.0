@@ -15,7 +15,7 @@ const [copied, setcopied] = useState('')
     setwidth(window.innerWidth);
   }, []);
     return (
-        <div style={{marginTop:'100px',width:'100vw',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',background:'#000917',color:'white',paddingTop:'50px', paddingBottom:'50px'}}>
+        <div style={{marginTop:'50px',width:'100vw',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',background:'#000917',color:'white',paddingTop:'50px', paddingBottom:'50px'}}>
           <p style={{opacity:'0.6'}}>Get in touch</p>
           <p style={{
               fontSize:

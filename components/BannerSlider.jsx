@@ -5,7 +5,6 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css'
 import { useResizeDetector } from 'react-resize-detector';
 
-// import "./styles.css"
 
 export default (props) => {
   const [pause, setPause] = useState(false)
@@ -29,14 +28,14 @@ spacing:1,
 
 useEffect(() => {
     timer.current = setInterval(() => {
-      if (!pause && slider) {
+      if (slider) {
         slider.next()
       }
     }, 3000)
     return () => {
       clearInterval(timer.current)
     }
-  }, [pause, slider])
+  }, [slider])
 
   const onResize = useCallback(() => {
     if (sliderRes !== undefined && sliderRes !== null) {
