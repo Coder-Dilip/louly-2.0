@@ -7,6 +7,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import PopularDestination from '../components/PopularDestination';
 import Whyus from "./Whyus";
 import Services from "./Services";
+import Footer from "../components/Footer";
+import BannerSlider from "./BannerSlider";
 
 
 function LandingPage() {
@@ -64,6 +66,10 @@ function LandingPage() {
   <Whyus />
 
   <Services />
+
+<div style={{display:width>800?'block':'none'}}><BannerSlider /></div>
+  
+
 
 
 </>

@@ -1,3 +1,4 @@
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import LandingPage from '../components/LandingPage'
 function Index() {
@@ -8,6 +9,7 @@ function Index() {
 <LandingPage />
 
     </div>
+    <Footer />
     </div>
   )
 }

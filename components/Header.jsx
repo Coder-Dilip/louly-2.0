@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { useState } from 'react'
-import {Menu,Instagram,Facebook,GitHub,Close} from '@material-ui/icons'
+import {Close, Menu,Instagram,Facebook,YouTube } from '@material-ui/icons';
+import PublicIcon from '@material-ui/icons/Public';
+
 import router, { useRouter } from 'next/router'
 
 export default function Header() {
@@ -70,11 +72,11 @@ settop(50)
             <Link href='/contact'><p  onClick={handleClick}  className={router.pathname=='/contact'? styles.active: styles.nav_links} style={{fontSize:'1.5rem',marginBottom:'5px'}}>Contact</p></Link>
             <div style={{width:'100%',marginTop:'130px'}}>
             <button onClick={() =>window.open('mailto:designsdilip@gmail.com')} className={styles.contacts} style={{width:'100%',fontWeight:300,letterSpacing:'.09rem',padding:'10px 20px'}}>info@nomadictravelers.com</button>
-<div style={{display:'flex',alignItems:'center',width:'200px',justifyContent:'space-between',margin:'auto',}}>
-    <a href='https://github.com/Coder-Dilip' target="_blank" rel="noreferrer"><GitHub  className={styles.link_icons} /></a>
-    <a href='http://www.instagram.com/dilip_stack' target="_blank" rel="noreferrer"><Instagram className={styles.link_icons} /></a>
-    <a href='https://www.facebook.com/dilip.pokhrel.18294/' target="_blank" rel="noreferrer"><Facebook className={styles.link_icons} /></a>
-    <a href='https://www.behance.net/hemsharma'  target="_blank" rel="noreferrer"><p className={styles.link_icons} style={{fontWeight:'bold',fontFamily:'sans-serif',position:'relative',fontSize:'1.3rem'}}>Be <span style={{position:'relative',top:'-9px',left:'-15px'}}>-</span></p></a>
+<div style={{display:'flex',alignItems:'center',width:'200px',justifyContent:'space-between',margin:'auto', marginTop:'30px'}}>
+<a href='https://www.instagram.com/nepalnomadictravelers' target="_blank" rel="noreferrer"><Instagram className={styles.links_icons_footer} /></a>
+    <a href='https://www.facebook.com/nepalnomadictraveler' target="_blank" rel="noreferrer"><Facebook className={styles.links_icons_footer} /></a>
+    <a href='https://github.com/Coder-Dilip' target="_blank" rel="noreferrer"><PublicIcon className={styles.links_icons_footer} /></a>
+    <a href='https://www.youtube.com/travel' target="_blank" rel="noreferrer"><YouTube className={styles.links_icons_footer} /></a>
 </div>
 <Close onClick={handleClick} style={{position:'relative',left:'90%', background:'orangered',borderRadius:'50%',boxShadow: '1px 10px 17px -10px rgba(0,0,0,0.08)',padding:'10px',color:'white',fontSize:'2.1rem'}} />
             </div>

@@ -336,7 +336,7 @@ line-height: 3.6rem;
         font-size: 0.8rem;
       }
 
-      .services_button{
+      .services_button,.services_button1,.services_button2{
         border: none;
         outline: none;
         border-radius: 20px;
@@ -345,6 +345,20 @@ line-height: 3.6rem;
         background: white;
         cursor: pointer;
         margin-top: 12px;
+      }
+
+      .services_button1:hover{
+        background:#ff954a;
+        color: white;
+        border-color: #ff954a;
+        transition: .3s;
+      }
+
+      .services_button2:hover{
+        background:#b14aff;
+        color: white;
+        border-color: #b14aff;
+        transition: .3s;
       }
 
       .services_button:hover{
