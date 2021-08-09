@@ -28,14 +28,14 @@ spacing:1,
 
 useEffect(() => {
     timer.current = setInterval(() => {
-      if (slider) {
+      if (!pause && slider) {
         slider.next()
       }
     }, 3000)
     return () => {
       clearInterval(timer.current)
     }
-  }, [slider])
+  }, [pause, slider])
 
   const onResize = useCallback(() => {
     if (sliderRes !== undefined && sliderRes !== null) {
