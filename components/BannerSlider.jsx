@@ -1,67 +1,62 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-
-// export default function BannerSlider(){
-//     return (
-//         <div style={{position:'relative', width:'80%', height:'400px'}}>
-// <Image src='/pokhara.jpeg' layout='fill' />
-//         </div>
-//     )
-// }
-
-
-// import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
-
 import SwiperCore, {
-    Autoplay,Pagination,Navigation
+    Autoplay,Pagination,Navigation, EffectFade
   } from 'swiper/core';
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/swiper.min.css";
-import { useEffect } from "react";
-// install Swiper modules
-SwiperCore.use([Navigation, Pagination, Autoplay])
+SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade])
+import styles from '../styles/Home.module.css'
 
 const BannerSlider = () => {
     const [perview, setperview] = useState(0)
     useEffect(()=>{
        setperview(1) 
     },[])
+
+    const [width, setwidth] = useState(0);
+    useEffect(() => {
+      if (process.browser) {
+        setwidth(window.innerWidth);
+      }
+    }, []);
+
   return (
-      <div style={{border:'2px solid black', width:'80%', margin:'auto'}}>
+      <div style={{ width:'80%', margin:'auto', marginTop:width>1200?'100px':'50px'}}>
+          <p className={styles.subTitle} style={{ marginBottom:'50px'}}>Explore More</p>
         <Swiper
           spaceBetween={0}
           slidesPerView={perview}
           autoplay={{
-            "delay": 3500,
+            "delay": 3000,
             "disableOnInteraction": false
           }}
         >
           <SwiperSlide>
             <div > 
-                <div style={{position:'relative', width:'100%', height:'400px',margin:'auto'}}>
- <Image src='/pokhara.jpeg' layout='fill' />
+                <div style={{position:'relative', width:'100%', height:'300px',margin:'auto'}}>
+ <Image src='/sample.jpg' objectFit='contain' layout='fill' />
          </div>
          </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div>  
-                <div style={{position:'relative', width:'100%', height:'400px',margin:'auto'}}>
- <Image src='/pokhara.jpeg' layout='fill' />
+                <div style={{position:'relative', width:'100%', height:'300px',margin:'auto'}}>
+ <Image src='/sample.jpg' objectFit='contain' layout='fill' />
          </div>
          </div>
           </SwiperSlide>
-          
+
           <SwiperSlide>
             <div>  
-                <div style={{position:'relative', width:'100%', height:'400px',margin:'auto'}}>
- <Image src='/pokhara.jpeg' layout='fill' />
+                <div style={{position:'relative', width:'100%', height:'300px',margin:'auto'}}>
+ <Image src='/sample.jpg' objectFit='contain' layout='fill' />
          </div>
          </div>
           </SwiperSlide>
-    
 
         </Swiper>
       </div>
