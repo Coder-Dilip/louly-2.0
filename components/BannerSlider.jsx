@@ -1,76 +1,58 @@
-import React,{useCallback,useState,useEffect,useRef} from "react"
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
-import Image from 'next/image';
-import styles from '../styles/Home.module.css'
-import { useResizeDetector } from 'react-resize-detector';
+
+import { useState } from "react";
+import Image from "next/image";
+
+// export default function BannerSlider(){
+//     return (
+//         <div style={{position:'relative', width:'80%', height:'400px'}}>
+// <Image src='/pokhara.jpeg' layout='fill' />
+//         </div>
+//     )
+// }
 
 
-export default (props) => {
-  const [pause, setPause] = useState(false)
-  const timer = useRef()
-  let sliderRes;
-  const [sliderRef,slider] = useKeenSlider({
-    slidesPerView:1,
-    loop:true,
-duration:1000,
-spacing:1,
- dragStart: () => {
-      setPause(true)
-    },
-    dragEnd: () => {
-      setPause(false)
-    },
-    created(s) {
-      sliderRes=s;
-    },
-  })
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
 
-useEffect(() => {
-    timer.current = setInterval(() => {
-      if (!pause && slider) {
-        slider.next()
-      }
-    }, 3000)
-    return () => {
-      clearInterval(timer.current)
-    }
-  }, [pause, slider])
+import { Swiper, SwiperSlide } from 'swiper/react'
+import "swiper/swiper.min.css";
+import { useEffect } from "react";
+// install Swiper modules
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
 
-  const onResize = useCallback(() => {
-    if (sliderRes !== undefined && sliderRes !== null) {
-      sliderRes.resize();
-    }
-  }, []);
-
- useEffect(() => {
-    sliderRef.current.addEventListener("mouseover", () => {
-      setPause(true)
-    })
-    sliderRef.current.addEventListener("mouseout", () => {
-      setPause(false)
-    })
-  }, [sliderRef])
-
-  const { width, height, ref } = useResizeDetector({ onResize, handleWidth: true, handleHeight: false });
-
-
+const BannerSlider = () => {
+    const [perview, setperview] = useState(0)
+    useEffect(()=>{
+       setperview(1) 
+    },[])
   return (
-    <div ref={ref} style={{width:'80%', marginTop:'120px'}}>
-    <div ref={sliderRef} className="keen-slider">
-     <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={400} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara</p>
-        </div>
-     <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={400} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara</p>
-        </div>
-     <div className="keen-slider__slide">
-            <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={1200} height={400} />
-            <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara</p>
-        </div>
-    </div>
-    </div>
+      <div className='container'>
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={perview}
+          navigation
+          pagination={{ clickable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log('slide change')}
+        >
+          <SwiperSlide>
+            <div>  <div style={{position:'relative', width:'80%', height:'400px'}}>
+ <Image src='/pokhara.jpeg' layout='fill' />
+         </div></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>  <div style={{position:'relative', width:'80%', height:'400px'}}>
+ <Image src='/pokhara.jpeg' layout='fill' />
+         </div></div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div>Slide 3</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div >Slide 4</div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
   )
 }
+
+export default BannerSlider

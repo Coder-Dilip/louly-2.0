@@ -67,7 +67,7 @@ function LandingPage() {
 
   <Services />
 
-<div style={{display:width>800?'block':'none', position:'relative', left:width>542?'10%':'6%'}}><BannerSlider /></div>
+<div style={{display:width>800?'block':'none',}}><BannerSlider /></div>
   
 
 
