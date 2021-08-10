@@ -11,13 +11,17 @@ import Image from "next/image";
 // }
 
 
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+// import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
+
+import SwiperCore, {
+    Autoplay,Pagination,Navigation
+  } from 'swiper/core';
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import "swiper/swiper.min.css";
 import { useEffect } from "react";
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y])
+SwiperCore.use([Navigation, Pagination, Autoplay])
 
 const BannerSlider = () => {
     const [perview, setperview] = useState(0)
@@ -25,31 +29,40 @@ const BannerSlider = () => {
        setperview(1) 
     },[])
   return (
-      <div className='container'>
+      <div style={{border:'2px solid black', width:'80%', margin:'auto'}}>
         <Swiper
-          spaceBetween={50}
+          spaceBetween={0}
           slidesPerView={perview}
-          navigation
-          pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
+          autoplay={{
+            "delay": 3500,
+            "disableOnInteraction": false
+          }}
         >
           <SwiperSlide>
-            <div>  <div style={{position:'relative', width:'80%', height:'400px'}}>
+            <div > 
+                <div style={{position:'relative', width:'100%', height:'400px',margin:'auto'}}>
  <Image src='/pokhara.jpeg' layout='fill' />
-         </div></div>
+         </div>
+         </div>
           </SwiperSlide>
+
           <SwiperSlide>
-            <div>  <div style={{position:'relative', width:'80%', height:'400px'}}>
+            <div>  
+                <div style={{position:'relative', width:'100%', height:'400px',margin:'auto'}}>
  <Image src='/pokhara.jpeg' layout='fill' />
-         </div></div>
+         </div>
+         </div>
           </SwiperSlide>
+          
           <SwiperSlide>
-            <div>Slide 3</div>
+            <div>  
+                <div style={{position:'relative', width:'100%', height:'400px',margin:'auto'}}>
+ <Image src='/pokhara.jpeg' layout='fill' />
+         </div>
+         </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div >Slide 4</div>
-          </SwiperSlide>
+    
+
         </Swiper>
       </div>
   )
