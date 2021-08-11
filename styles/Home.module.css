@@ -368,7 +368,18 @@ line-height: 3.6rem;
         transition: .3s;
       }
 
+      .bannerContainer{
+        box-shadow: 3px 4px 25px -18px rgba(0,0,0,0.46);
+        -webkit-box-shadow: 3px 4px 25px -18px rgba(0,0,0,0.46);
+        -moz-box-shadow: 3px 4px 25px -18px rgba(0,0,0,0.46);
+      }
 
+.roundedbanner{
+  border-radius: 5px;
+  filter: brightness(1.1);
+
+
+}
 
 
 
