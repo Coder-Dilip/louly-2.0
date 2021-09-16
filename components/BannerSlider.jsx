@@ -13,7 +13,7 @@ import styles from '../styles/Home.module.css';
 
 const SliderComponent=({ img, title, subtitle, buttonText, color })=>{
 return (
-  <div > 
+  <div> 
   <div className={styles.bannerContainer} style={{position:'relative', width:'80%', height:'300px',margin:'auto', marginTop:'10px', marginBottom:'10px'}}>
 <Image priority={true} className={styles.roundedbanner} src={img}  layout='fill' objectFit='cover' />
 <div style={{display:'flex', justifyContent:'center'}}>

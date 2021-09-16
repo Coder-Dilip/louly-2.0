@@ -24,7 +24,7 @@ function LandingPage() {
   useEffect(() => {
     function handleResize() {
       if (process.browser) {
-        window.location.reload();
+        setwidth(window.innerWidth);
       }
     }
     window.addEventListener("resize", handleResize);

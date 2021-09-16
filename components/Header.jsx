@@ -64,13 +64,13 @@ settop(50)
             <Link href='/blog'><p  className={router.pathname=='/blog'? styles.active: styles.nav_links}>Blog</p></Link>
       </div>:null}
 
-      {width<550 && clicked?<div style={{width:'101vw',display:'flex',alignItems:'center',justifyContent:'flex-start',maxWidth:'500px',fontWeight:'bold',flexDirection:'column',transition:'.3s',position:'absolute',top:top,alignItems:'flex-start', borderRadius:'10px',padding:'30px 20px',background:"rgba(255, 255, 255, 0.989)",height:'100vh',left:'-2px',opacity:opacity}} className={styles.responsive_container}>
+      {width<550 && clicked?<div style={{width:'105vw',display:'flex',alignItems:'center',justifyContent:'flex-start',fontWeight:'bold',flexDirection:'column',transition:'.3s',position:'absolute',top:top,alignItems:'flex-start', borderRadius:'10px',padding:'30px 20px',background:"rgba(255, 255, 255, 0.989)",height:'100vh',left:'-2px',opacity:opacity}} className={styles.responsive_container}>
             <Link  href='/#work' ><p  onClick={handleClick} className={pathname=='#work'? styles.active: styles.nav_links} style={{fontSize:'1.5rem',marginBottom:'5px',cursor:'pointer'}}>Work</p></Link>
             <Link href='/about'><p  onClick={handleClick}  className={router.pathname=='/about'? styles.active: styles.nav_links} style={{fontSize:'1.5rem',marginBottom:'5px'}}>About</p></Link>
            <Link href='/products'><p  onClick={handleClick}  className={router.pathname=='/products'? styles.active: styles.nav_links} style={{fontSize:'1.5rem',marginBottom:'5px'}}>Products</p></Link>
             <Link href='/blog'><p  onClick={handleClick}  className={router.pathname=='/blog'? styles.active: styles.nav_links} style={{fontSize:'1.5rem',marginBottom:'5px'}}>Blog</p></Link>
             <Link href='/contact'><p  onClick={handleClick}  className={router.pathname=='/contact'? styles.active: styles.nav_links} style={{fontSize:'1.5rem',marginBottom:'5px'}}>Contact</p></Link>
-            <div style={{width:'100%',marginTop:'130px'}}>
+            <div style={{width:'100%',marginTop:width<'350'?'50px':'130px',marginLeft:'-5px'}}>
             <button onClick={() =>window.open('mailto:designsdilip@gmail.com')} className={styles.contacts} style={{width:'100%',fontWeight:300,letterSpacing:'.09rem',padding:'10px 20px'}}>info@nomadictravelers.com</button>
 <div style={{display:'flex',alignItems:'center',width:'200px',justifyContent:'space-between',margin:'auto', marginTop:'30px'}}>
 <a href='https://www.instagram.com/nepalnomadictravelers' target="_blank" rel="noreferrer"><Instagram className={styles.links_icons_footer} /></a>

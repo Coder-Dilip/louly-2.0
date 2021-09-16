@@ -6,8 +6,10 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import RoomIcon from '@material-ui/icons/Room';
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { useRouter } from "next/dist/client/router";
 
 export default function Slider (props){
+  const router=useRouter();
   const [width, setwidth] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
   useEffect(() => {
@@ -26,28 +28,28 @@ export default function Slider (props){
   return (
     <>
     <div style={{position:'relative',width:'80%'}}>
-      <div style={{}}  ref={sliderRef} className="keen-slider" id={styles.popular_img_id}>
-        <div className="keen-slider__slide">
+      <div ref={sliderRef} className="keen-slider" id={styles.popular_img_id}>
+        <div onClick={()=>router.push('/destination/?location=pokhara')} className="keen-slider__slide">
             <Image className={styles.slider_img} priority={true} src='/pokhara.jpeg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Pokhara <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
-        <div className="keen-slider__slide">
+        <div onClick={()=>router.push('/destination/?location=kathmandu')} className="keen-slider__slide">
             <Image className={styles.slider_img} priority={true} src='/kathmandu.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Kathmandu <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
-        <div className="keen-slider__slide">
+        <div onClick={()=>router.push('/destination/?location=chitwan')} className="keen-slider__slide">
             <Image className={styles.slider_img} priority={true} src='/chitwan.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Chitwan <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
-        <div className="keen-slider__slide">
+        <div onClick={()=>router.push('/destination/?location=lumbini')} className="keen-slider__slide">
             <Image className={styles.slider_img} priority={true} src='/lumbini.png' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Lumbini <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
-        <div className="keen-slider__slide">
+        <div onClick={()=>router.push('/destination/?location=mustang')} className="keen-slider__slide">
             <Image className={styles.slider_img} priority={true} src='/mustang.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Mustang <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>
-        <div className="keen-slider__slide">
+        <div onClick={()=>router.push('/destination/?location=rasuwa')} className="keen-slider__slide">
             <Image className={styles.slider_img} priority={true} src='/Rasuwa.jpg' width={400} height={300} />
             <p style={{zIndex:'200',position:'relative',top:'-60px',left:'20px',color:'white',fontWeight:'bold'}}>Rasuwa  <RoomIcon style={{color:'white',position:'relative',top:'5px'}}/></p>
         </div>

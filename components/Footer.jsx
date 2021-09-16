@@ -37,7 +37,7 @@ const [copied, setcopied] = useState('')
               fontWeight:'bolder'
 
             }}>Let&apos;s Travel Nepal</p>
-            <p style={{textAlign:'center',width:'93%',maxWidth:'500px',fontSize:'1.1rem',letterSpacing:'0.05rem',lineHeight:'1.8rem',marginTop:'-20px'}}>If you want to get help regarding chosing destination, Budget Estimation, Booking, Transportation feel free to <span onClick={()=>window.location.href='/contact'} className={styles.nomadicTravelers} style={{color:'#00d0fa',borderBottomColor:'#00d0fa',paddingBottom:'2px',cursor:'pointer',fontWeight:'bold'}}>contact</span> us.</p>
+            <p style={{textAlign:'center',width:'93%',maxWidth:'500px',fontSize:'1.1rem',letterSpacing:'0.05rem',lineHeight:'1.8rem',marginTop:'-20px'}}>If you want to get help regarding chosing destination, Budget Estimation, Booking, Transportation then feel free to <span onClick={()=>window.location.href='/contact'} className={styles.nomadicTravelers} style={{color:'#00d0fa',borderBottomColor:'#00d0fa',paddingBottom:'2px',cursor:'pointer',fontWeight:'bold'}}>contact</span> us.</p>
 
 
 <div style={{width:'100%',alignItems:'center',display:'flex',justifyContent:'center'}}>
