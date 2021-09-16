@@ -25,7 +25,7 @@ const [_num_for_square, set_num_for_square] = useState(0);
     <Footer />
 
     {/* redux practice */}
-    <button onClick={()=>{
+    {/* <button onClick={()=>{
 dispatch(decNumber());
 }}  title='Decrement' >-</button>
 <input readOnly={true} type='text' name='quantity' placeholder='input' value={myState}></input>
@@ -35,21 +35,21 @@ dispatch(incNumber(5));
 
 <br/>
 <br/>
-<br />
+<br /> */}
 
 
 {/* for squaring the num */}
 
-<input type='text' placeholder="enter num" onChange={(e)=>{
+{/* <input type='text' placeholder="enter num" onChange={(e)=>{
   set_num_for_square(e.target.value)
 }} /><br/>
 <button onClick={()=>dispatch(squareNumber(_num_for_square))}  >
 calculate square
 </button><br/>
 <input type='text' readOnly={true} value={myState2==0?'output':myState2} />
-{myState3.map((name)=>
-<p>{name}</p>
-)}
+{myState3.map((name,index)=>
+<p key={index}>{name}</p>
+)} */}
     </div>
   )
 }
