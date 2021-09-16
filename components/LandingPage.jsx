@@ -21,14 +21,14 @@ function LandingPage() {
 
  
 
-  useEffect(() => {
-    function handleResize() {
-      if (process.browser) {
-        setwidth(window.innerWidth);
-      }
-    }
-    window.addEventListener("resize", handleResize);
-  });
+  // useEffect(() => {
+  //   function handleResize() {
+  //     if (process.browser) {
+  //       setwidth(window.innerWidth);
+  //     }
+  //   }
+  //   window.addEventListener("resize", handleResize);
+  // });
 
   return (
     <>
